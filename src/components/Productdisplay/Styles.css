@@ -1,0 +1,94 @@
+.product-grid {
+    display: flex;
+    gap: 10px; 
+    justify-content: center;
+    flex-wrap: nowrap; 
+    padding: 0 50px; 
+  }
+  
+  .card {
+    flex: 0 0 23%; 
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 5px; 
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .card-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .favorite-icon {
+    font-size: 24px;
+    color: #ff4d4f; 
+    cursor: pointer;
+  }
+  
+  .card-content {
+    margin-top: 10px;
+  }
+  
+  .card-prices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .card-price {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .card-old-price {
+    font-size: 14px;
+    color: #888;
+    text-decoration: line-through;
+  }
+  
+  .card-name {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .card-brand {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .filter {
+    padding: 20px 50px; 
+  }
+  
+  .filter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .filter-categories {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .filter-categories button {
+    font-size: 1.1rem;
+    font-weight: 200;
+    padding: 5px 15px;
+    border: 1px solid rgb(42, 38, 38);
+    color: rgb(42, 38, 38);
+    cursor: pointer;
+    background-color: white;
+    border-radius: 25px;
+  }
+  
