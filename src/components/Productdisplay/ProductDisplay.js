@@ -41,8 +41,7 @@ const ProductDisplay = () => {
     { image: macbookImage, price: 935.90, name: 'Macbook Air 13 256Gb', brand: 'Apple' },
     { image: budsImage, price: 41.25, oldPrice: 55.00, name: 'Buds 4 Lite Black', brand: 'Xiaomi' },
     { image: ps5Image, price: 684.60, name: 'PlayStation 5 825GB', brand: 'Sony' },
-    { image: watchImage, price: 168.50, name: 'Galaxy Watch4 40mm', brand: 'Samsung' },
-  ];
+    { image: watchImage, price: 168.50, name: 'Galaxy Watch4 40mm', brand: 'Samsung' }, ];
 
   return (
     <div>

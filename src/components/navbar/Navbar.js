@@ -5,11 +5,7 @@ import { RiUserLine, RiSearchLine, RiHeartLine, RiLuggageCartLine } from "react-
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [inputValues, setInputValues] = useState({
-    search: '',
-    wishlist: '',
-    cart: '',
-    user: { username: '', password: '' },
-  });
+    search: '', wishlist: '', cart: '', user: { username: '', password: '' }, });
   const dropdownRef = useRef(null);
 
   const handleIconClick = (icon) => {
@@ -19,8 +15,7 @@ const Navbar = () => {
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setActiveDropdown(null);
-    }
-  };
+    }};
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
@@ -31,16 +26,14 @@ const Navbar = () => {
 
   const handleInputChange = (event, field, subField) => {
     if (subField) {
-      setInputValues({
-        ...inputValues,
+      setInputValues({...inputValues,
         [field]: {
           ...inputValues[field],
           [subField]: event.target.value,
         },
       });
     } else {
-      setInputValues({
-        ...inputValues,
+      setInputValues({...inputValues,
         [field]: event.target.value,
       });
     }
@@ -68,36 +61,26 @@ const Navbar = () => {
           <RiSearchLine />
           {activeDropdown === 'search' && (
             <Dropdown
-              content="search"
-              inputValue={inputValues.search}
-              onInputChange={(event) => handleInputChange(event, 'search')}
-              onSubmit={(event) => handleSubmit(event, 'search')}
-              dropdownRef={dropdownRef}
-            />
+              content="search" inputValue={inputValues.search}
+              onInputChange={(event) => handleInputChange(event, 'search')} onSubmit={(event) => handleSubmit(event, 'search')}
+              dropdownRef={dropdownRef} />
           )}
         </div>
         <div className="navbar__icon" onClick={() => handleIconClick('wishlist')}>
           <RiHeartLine />
           {activeDropdown === 'wishlist' && (
             <Dropdown
-              content="wishlist"
-              inputValue={inputValues.wishlist}
-              onInputChange={(event) => handleInputChange(event, 'wishlist')}
-              onSubmit={(event) => handleSubmit(event, 'wishlist')}
-              dropdownRef={dropdownRef}
-            />
+              content="wishlist" inputValue={inputValues.wishlist}
+              onInputChange={(event) => handleInputChange(event, 'wishlist')} onSubmit={(event) => handleSubmit(event, 'wishlist')}
+              dropdownRef={dropdownRef} />
           )}
         </div>
         <div className="navbar__icon" onClick={() => handleIconClick('cart')}>
           <RiLuggageCartLine />
           {activeDropdown === 'cart' && (
             <Dropdown
-              content="cart"
-              inputValue={inputValues.cart}
-              onInputChange={(event) => handleInputChange(event, 'cart')}
-              onSubmit={(event) => handleSubmit(event, 'cart')}
-              dropdownRef={dropdownRef}
-            />
+              content="cart" inputValue={inputValues.cart} onInputChange={(event) => handleInputChange(event, 'cart')}
+              onSubmit={(event) => handleSubmit(event, 'cart')} dropdownRef={dropdownRef} />
           )}
         </div>
         <div className="navbar__icon" onClick={() => handleIconClick('user')}>
@@ -105,11 +88,8 @@ const Navbar = () => {
           {activeDropdown === 'user' && (
             <Dropdown
               content="user"
-              inputValue={inputValues.user}
-              onInputChange={(event) => handleInputChange(event, 'user', event.target.name)}
-              onSubmit={(event) => handleSubmit(event, 'user')}
-              dropdownRef={dropdownRef}
-            />
+              inputValue={inputValues.user} onInputChange={(event) => handleInputChange(event, 'user', event.target.name)}
+              onSubmit={(event) => handleSubmit(event, 'user')}  dropdownRef={dropdownRef}  />
           )}
         </div>
       </div>
@@ -125,11 +105,7 @@ const Dropdown = ({ content, inputValue, onInputChange, onSubmit, dropdownRef })
       inputField = (
         <form onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}>
           <input
-            type="text"
-            placeholder="Search products..."
-            value={inputValue}
-            onChange={onInputChange}
-          />
+            type="text" placeholder="Search products..."  value={inputValue}  onChange={onInputChange} />
           <button type="submit">Search</button>
         </form>
       );
@@ -149,11 +125,7 @@ const Dropdown = ({ content, inputValue, onInputChange, onSubmit, dropdownRef })
       inputField = (
         <form onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}>
           <input
-            type="number"
-            placeholder="Enter quantity..."
-            value={inputValue}
-            onChange={onInputChange}
-          />
+            type="number" placeholder="Enter quantity..." value={inputValue} onChange={onInputChange} />
           <button type="submit">Add to Cart</button>
         </form>
       );
@@ -162,20 +134,10 @@ const Dropdown = ({ content, inputValue, onInputChange, onSubmit, dropdownRef })
       inputField = (
         <form onSubmit={onSubmit} onClick={(e) => e.stopPropagation()}>
           <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={inputValue.username}
-            onChange={onInputChange}
-          />
+            type="text"  name="username"   placeholder="Username" value={inputValue.username}  onChange={onInputChange} />
           <br />
           <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={inputValue.password}
-            onChange={onInputChange}
-          />
+            type="password" name="password" placeholder="Password"  value={inputValue.password}  onChange={onInputChange} />
           <button type="submit">Login</button>
         </form>
       );
